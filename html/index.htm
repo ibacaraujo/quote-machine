@@ -1,0 +1,137 @@
+<html>
+<head>
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Love+Ya+Like+A+Sister|Abel|Open+Sans+Condensed|Poiret+One|Raleway+Dots|Pacifico|Londrina+Shadow" rel="stylesheet">
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		<!-- Style for the page -->
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+		<!-- Font awesome -->
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div id="princp" class="container-fluid envolve">
+	<div id="header" class="container-fluid">
+		<h2 id="p1">RANDOM SUPERHEROES QUOTES</h2>
+	</div>
+	<div id="cover" class="container-fluid page">
+			<div class="page">
+				<button id="start" onClick="start()">Start <i class="fa fa-play" aria-hidden="true"></i></button>
+			</div>
+	</div>
+	<div id="show" class="container-fluid cite">
+			<div class="quote col-centered">
+				<div class="wrapper">
+					<div id="content"></div>
+					<div id="author"></div>
+				</div>
+				<div class="row col-md-12">
+					<button id="new" class="btn-danger"onClick="start()">New Quote</button>
+					<button id="twt" class="twit btn-primary" onClick="tweetIt()"><i class="fa fa-twitter"></i></button>
+				</div>
+			</div>
+	</div>
+  </div>	
+	<div class="container-fluid foot">
+			<h3 id="say">jolieteam@jolie.com</h3>
+			<div id="say">
+				<a id="social" href="https://twitter.com/jolieteam"class="sc twitter btn btn-twitter btn-primary twit"><i class="fa fa-twitter"></i></a>
+				<a id="social" href="https://plus.google.com/u/0/107284327426088035025/posts" class="sc btn btn-googleplus btn-danger"><i class="fa fa-google-plus"></i></a>   
+				<a id="social" href="https://br.linkedin.com/in/jorsiramos" class="sc btn btn-linkedin btn-primary" ><i class="fa fa-linkedin"></i></a>   
+			</div>
+	</div>
+
+</body>
+
+<script>
+
+$( document ).ready(function() {
+	$("#start").fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+});
+
+
+var quotes = [
+	"Why do we fall? So we can learn to pick ourselves back up.",
+	"You can take away my suits, you can take away my home, but there is one thing you can never take away from me. I am Iron Man.",
+	"When the mob and the press and the world tell you to move, your job is to plant yourself like a tree beside the river of truth, and tell the whole world – 'No, you move'.",
+	"No Matter how bad things get, something good is out there, over the horizon.",
+	"I had my eyes opened. I came to realize that I had more to offer this world than just making things that blow up.",
+	"You are much stronger than you think you are. Trust me.",
+	"There is a right and a wrong in the universe, and the distinction is not hard to make.",
+	"With great power, comes great responsibility.",
+	"I wear a mask, and that mask is not to hide who I am, but to create who I am.",
+	"If you cage the best, the beast will get angry."
+];
+
+var authors = [
+	"Batman",
+	"Iron Man",	
+	"Captain America",
+	"Green Lantern",
+	"Iron Man",
+	"Spider Man",
+	"Superman",
+	"Spider Man",
+	"Batman",
+	"The Wolverine"
+
+];
+
+function start(){
+	document.getElementById('cover').style.display = "none";
+	document.getElementById('header').style.display = "none";
+	document.getElementById('show').style.display = "block";
+	generateQuote();
+}
+
+function generateQuote() {
+	var number = (Math.random()*9).toFixed();
+	document.getElementById('content').innerHTML = '<i class="fa fa-quote-left"></i>'+' '+quotes[number];
+	document.getElementById('author').innerHTML = '- ' + authors[number];
+	$('#princp').css("background-image", "url(http://imgc.allpostersimages.com/images/P-473-488-90/92/9233/9J43500Z/posters/marvel-comics-retro-background.jpg)");
+	if(authors[number] == "Batman"){
+		$('#show').css("background-image", "url(http://www.pixelstalk.net/wp-content/uploads/2015/12/Batman-Background-for-desktop.png)");
+	} else if(authors[number] == "Iron Man"){
+		$('#show').css("background-image", "url(http://stock-wallpapers.com/wp-content/uploads/2015/01/Super-heroes-Minimalist-Wallpapers-1920-1080.jpg)");
+	} else if(authors[number] == "Captain America"){
+		$('#show').css("background-image", "url(http://cartoondistrict.com/wp-content/uploads/2014/09/captain-america-wallpaper-for-desktop1-4.png)");
+	} else if(authors[number] == "Spider Man"){
+		$('#show').css("background-image", "url(http://cdn.wallpapersafari.com/14/87/XOhB7v.jpg)");
+	} else if(authors[number] == "Green Lantern"){
+		$('#show').css("background-image", "url(https://s-media-cache-ak0.pinimg.com/originals/2c/b7/1d/2cb71d428efab185476069f4248f5ecd.jpg)");
+	} else if(authors[number] == "The Wolverine"){
+		$('#show').css("background-image", "url(http://wallup.net/wp-content/uploads/2016/03/09/69675-heroes-X-Men-Wolverine-Blo0p-superhero-Marvel_Heroes-736x459.jpg)");
+	} else if(authors[number] == "Superman"){
+		$('#show').css("background-image", "url(http://wallpapercave.com/wp/BLg7P0R.jpg)");
+	} 
+}
+
+function tweetIt () {
+  var phrase = document.getElementById('content').innerText;
+  var name = document.getElementById('author').innerText;
+  var tweetUrl;
+  
+  if(phrase.length <= 140) {
+	tweetUrl = 'https://twitter.com/share?text=' +'"'+
+    encodeURIComponent(phrase)+'"'+ encodeURIComponent(name);
+  } else if (phrase.length > 140) {
+	tweetUrl = 'https://twitter.com/share?text=' + '"' +
+    encodeURIComponent(phrase.substr(0, 136)) + '"' + "..";
+  }
+    
+  window.open(tweetUrl);
+}
+
+</script>
+
+</html>
