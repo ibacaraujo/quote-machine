@@ -1,0 +1,99 @@
+.envolve{
+	background-image: url("https://img1.etsystatic.com/040/1/8179056/il_fullxfull.530852159_gzis.jpg");
+	background-repeat: no-repeat;
+    background-size: cover;	
+	min-width: 1200px;
+    min-height: 650px;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+.page {
+	background-image: url("https://media.giphy.com/media/PBAiqiqq9kylO/giphy.gif");
+	background-repeat: no-repeat;
+    background-size: cover;
+    background-size: cover;
+    width: 800px;
+    height: 520px;
+	opacity:0.98;
+} 
+.cite {
+	margin-top:50px;
+	margin-bottom:20px;
+	width: 800px;
+    min-height:300px;
+	display: none;
+	background-repeat: no-repeat;
+    background-size: 800px 300px;
+	border-radius: 25px;
+	opacity: 0.7;
+	top: 20%;
+    left: 20%;
+	position:fixed;
+}
+#start {
+	float:right;
+	font-size:30px;
+	font-family:'Poiret One';
+	border-radius:29px;
+}
+
+
+#p1 {
+	font-family: Londrina Shadow;
+	font-size:100px;
+	color:white;
+	text-align:center;
+}
+
+.quote {
+	margin-top:20px;
+}
+
+#content {
+	font-family: Poiret One;
+	color:white;
+	text-align:center;
+	font-size:35px;
+}
+
+#author {
+	font-family: Pacifico;
+	color:white;
+	text-align:center;
+	font-size:35px;
+}
+
+.foot {
+	background-color:white;
+}
+
+#say {
+	font-family: 'Poiret One';
+	text-align: center;
+	font-size:20px;
+	margin-bottom:10px;
+}
+
+#new, #twt{
+	float:right;
+	margin-left:5px;
+	font-size:16px;
+	font-family: 'Poiret One';
+	opacity: 1;
+}
+
+#twt {
+	font-size:22px;
+
+.btns {
+	margin-bottom:10px;
+}
+
+.twit {
+	background-color:#4099FF;
+	font-size:15px;
+}
